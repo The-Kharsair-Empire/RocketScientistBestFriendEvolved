@@ -25,10 +25,12 @@ def od_from_position_and_velocity(position: tuple[float, float, float], velocity
     eccentricity_vector = (vec3d.vec_crs(velocity, angular_momentum_vector) / mu) - (position / r)
     eccentricity = vec3d.l2_norm(eccentricity_vector)
 
-    inclination = acos(vec3d.vec_dot(angular_momentum_vector, kci_y_axis) / vec3d.l2_norm(angular_momentum_vector))
+    inclination = acos(vec3d.vec_dot(angular_momentum_vector, kci_z_axis) / vec3d.l2_norm(angular_momentum_vector))
 
-    n_vector = vec3d.vec_crs(kci_y_axis, angular_momentum_vector)
+    n_vector = vec3d.vec_crs(kci_z_axis, angular_momentum_vector)
     longitude_of_ascending_node = acos(vec3d.vec_dot(kci_x_axis, n_vector) / vec3d.l2_norm(n_vector))
+
+    # swapping y, z axis
 
     if vec3d.vec_dot(n_vector, kci_z_axis) >= 0:
         print("0 <= LAN <= pi")
