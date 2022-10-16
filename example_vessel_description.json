@@ -1,0 +1,13 @@
+{
+  "target_altitude" : 100000,
+  "lift_off_at_stage": 1,
+  "stages": [
+    {
+      "type": "decouple_stage",
+      "resource": "LF"
+    },
+    {
+      "type": ""
+    }
+  ]
+}

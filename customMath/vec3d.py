@@ -17,6 +17,17 @@ class Vec3D:
     def __sub__(self, other_vec3d: Vec3D) -> Vec3D:
         return Vec3D(self.x - other_vec3d.x, self.y - other_vec3d.y, self.z - other_vec3d.z)
 
+    def cross(self, other_vec3d: Vec3D) -> Vec3D:
+        x = self.vec[1] * other_vec3d.vec[2] - self.vec[2] * other_vec3d.vec[1]
+        y = self.vec[2] * other_vec3d.vec[0] - self.vec[0] * other_vec3d.vec[2]
+        z = self.vec[0] * other_vec3d.vec[1] - self.vec[1] * other_vec3d.vec[0]
+        return Vec3D(x, y, z)
+
+    def l2_norm(self) -> float:
+        return sqrt(self.vec[0] * self.vec[0] + self.vec[1] * self.vec[1] + self.vec[2] * self.vec[2])
+
+    def dot(self, other_vec3d: Vec3D) -> Vec3D:
+        return self.x * other_vec3d.x + self.y * other_vec3d.y + self.z * other_vec3d.z
 
 def l2_norm(vec3d: Vec3D) -> float:
     return sqrt(vec3d.vec[0] * vec3d.vec[0] + vec3d.vec[1] * vec3d.vec[1] + vec3d.vec[2] * vec3d.vec[2])

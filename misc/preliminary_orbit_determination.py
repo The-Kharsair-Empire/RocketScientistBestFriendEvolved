@@ -1,6 +1,6 @@
 import krpc
-from maths import vec3d
-from maths.vec3d import Vec3D
+from customMath import vec3d
+from customMath.vec3d import Vec3D
 from math import acos
 
 
