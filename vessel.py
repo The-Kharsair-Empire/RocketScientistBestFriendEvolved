@@ -26,7 +26,7 @@ class VesselSequenceDescription:
 
     def __init__(self, vessel_name, vessel_description):
         self.parse_vessel(vessel_description)
-        self.data_streams = {}
+        # self.data_streams = {}
 
 
 class VesselDataStream:
